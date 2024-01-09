@@ -20,7 +20,10 @@ export default function App() {
     if (!task) return;
 
     Keyboard.dismiss();
-    setTaskItems([...taskItems, task]);
+    setTimeout(() => {
+      setTaskItems([...taskItems, task]);
+    }, 1000);
+
     setTask("");
   };
 
