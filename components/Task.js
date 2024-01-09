@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Task = (props) => {
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
         <View style={styles.square}></View>
         <Text style={styles.itemText}>{props.text}</Text>
+        <Text style={styles.timeStamp}>{time}</Text>
       </View>
       <View style={styles.circular}></View>
     </View>
@@ -28,6 +30,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexWrap: "wrap",
     flex: 1,
+  },
+  timeStamp: {
+    fontSize: 15,
+    color: "#55BCF6",
+    marginRight: 10,
   },
   square: {
     width: 24,
