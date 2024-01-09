@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
@@ -7,6 +6,7 @@ import {
   Platform,
   TouchableOpacity,
   TextInput,
+  ScrollView,
   Keyboard,
 } from "react-native";
 import React, { useState } from "react";
@@ -33,7 +33,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* Today's Tasks */}
-      <View style={styles.tasksWrapper}>
+      <ScrollView style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Today's Tasks</Text>
         <View style={styles.items}>
           {/* This is where the tasks will go! */}
@@ -45,7 +45,7 @@ export default function App() {
             );
           })}
         </View>
-      </View>
+      </ScrollView>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
